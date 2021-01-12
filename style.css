@@ -12,7 +12,11 @@ body {
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: 150px 70px 1fr 70px;
-
+    grid-template-areas:
+    "cabecera cabecera cabecera cabecera cabecera"
+    "menu menu menu menu menu"
+    "lateral contenido contenido contenido contenido "
+    "lateral pie pie pie pie";
     width: 75%;
     height: 1000px;
     margin: 0px auto;
@@ -21,16 +25,17 @@ body {
 
 
 #website-areas #cabecera{
+    grid-area: cabecera;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 1/6;
+    
     background-color: blue;
     color: white;
 }
 
 #website-areas #menu{
-    grid-column: 1/6;
+    grid-area: menu;
 
     background-color: lightblue;
     color: black;
@@ -45,7 +50,8 @@ body {
 }
 
 #website-areas #contenido{
-    grid-column: 1/5;
+    grid-area: contenido ;
+
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 25px;
@@ -54,18 +60,19 @@ body {
 }
 
 #website-areas #contenido article{
+   
     background-color: #cccccc;
     border: 1px solid #555555;
 }
 
 #website-areas #lateral{
-    grid-column: 5/6;
+   grid-area: lateral;
     background-color: orange;
     color: white;
 }
 
 #website-areas #pie-pagina{
-    grid-column: 1/6;
+    grid-area: pie;
     background-color: black;
     color: white;
 }
@@ -89,7 +96,7 @@ body {
 }
 
 
-#cabecera{
+#website #cabecera{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +105,7 @@ body {
     color: white;
 }
 
-#menu{
+#website #menu{
     grid-column: 1/6;
 
     background-color: lightblue;
@@ -106,14 +113,14 @@ body {
     line-height: 70px;
 }
 
-#menu ul{
+#website #menu ul{
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     list-style: none;
     
 }
 
-#contenido{
+#website #contenido{
     grid-column: 1/5;
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -122,18 +129,18 @@ body {
     background-color: #eeeeee;
 }
 
-#contenido article{
+#website #contenido article{
     background-color: #cccccc;
     border: 1px solid #555555;
 }
 
-#lateral{
+#website #lateral{
     grid-column: 5/6;
     background-color: orange;
     color: white;
 }
 
-#pie-pagina{
+#website #pie-pagina{
     grid-column: 1/6;
     background-color: black;
     color: white;
